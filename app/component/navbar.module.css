@@ -1,0 +1,177 @@
+.header {
+    position: fixed;
+    display: block;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    height: auto;
+    width: calc(100% - 48px);
+    padding: 0px 24px;
+}
+
+.main {
+    max-width: 960px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    margin: 0px;
+    border: 0px;
+    width: 70%;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.buttonApply {
+    cursor: pointer;
+    padding: 10px 25px;
+    line-height: 16px;
+    white-space: nowrap;
+    color: #ffffff;
+    border: none;
+    border-radius: 24px;
+    background: #1d3434f2;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    height: 20px;
+}
+
+.logoImg {
+    width: auto;
+    height: 4rem;
+}
+
+.footer {
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: relative;
+}
+
+.navIco {
+    padding: 5px;
+    width: 1.8rem;
+    height: 1.8rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    display: none;
+}
+
+.footerInner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 128px 24px 0 24px
+}
+
+.footerDesc {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.navUl {
+    list-style: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    z-index: 1000;
+    margin-left: auto;
+    position: relative;
+}
+.navbar__links {
+    margin-right: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar__links {
+        display: contents;
+    }
+
+    .navIco {
+        display: block;
+        cursor: pointer;
+    }
+
+    .buttonApply {
+        margin-top: 20px;
+        width: 35%;
+        text-align: center;
+        position: absolute;
+        bottom: 80px;
+    }
+
+    .main {
+        padding: 0.5rem 0;
+    }
+
+    .navUl {
+        -webkit-align-items: flex-start;
+        -webkit-box-align: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-flex-flow: column nowrap;
+        -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 414px;
+        -webkit-transition: all 0.4s ease-out;
+        transition: all 0.4s ease-out;
+        opacity: 0;
+        overflow: scroll;
+        visibility: visible;
+        opacity: 1;
+        margin: 0;  
+        transform: translateX(0);
+        width: calc(100% - 115px);
+        display: none ;
+    }
+    .showNavCon{
+        transform: translate(0);
+        display: flex !important;
+    }
+
+}
