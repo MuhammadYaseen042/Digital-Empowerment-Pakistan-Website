@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.main}>
+    <div style={{marginTop:'1rem'}} className={styles.main}>
       <div className={styles.container}>
         <div className={styles.mainfront}>
           <div className={styles.color1}></div>

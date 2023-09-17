@@ -1,10 +1,13 @@
 
+
+import { redirect } from 'next/dist/server/api-utils'
 import styles from '../page.module.css'
 import Image from 'next/image'
 
-export default function Home() {
+export default function Home() {    
+    
     return (
-        <div className={styles.main}>
+        <div  className={styles.main}>
             <div style={{ top: '3rem' }} className={styles.conContainer}>
                 <div className={styles.conContainerInner}>
                     <div className={styles.conContainerInnerbody}>

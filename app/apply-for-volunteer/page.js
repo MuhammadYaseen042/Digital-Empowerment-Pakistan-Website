@@ -1,10 +1,7 @@
-
 import React from 'react'
 import styles from './page.module.css'
 import * as mongoose from "mongoose";
 import { redirect } from 'next/dist/server/api-utils';
-import { redirects } from '@/next.config';
-
 const schema = new mongoose.Schema({
     postfor: String,
     name: String,
@@ -21,24 +18,8 @@ const schema = new mongoose.Schema({
     exp: String,
     skills: Array
 });
-const userDir = mongoose.model('Directors', schema);
-const schema1 = new mongoose.Schema({
-    postfor: String,
-    name: String,
-    email: String,
-    phone: String,
-    gender: String,
-    fbLink: String,
-    instaLink: String,
-    linkedinLink: String,
-    region: String,
-    institute: String,
-    field: String,
-    year: String,
-    exp: String,
-    skills: Array
-});
-const userAmb = mongoose.model('Ambassador', schema1);
+const userVol1 = mongoose.model('Volunteers', schema);
+
 
 export default function page() {
 
@@ -52,51 +33,29 @@ export default function page() {
             // console.log(pair[1])
         }
 
-        let skills = data.slice(14, data.length);
+        let skills = data.slice(13, data.length);
         try {
             const url = `mongodb+srv://test:kali@digitalpak.yl8cbcq.mongodb.net/digital?retryWrites=true&w=majority`;
             mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
                 console.log('Connected to MongoDB Atlas')
-                if (data[1] === 'director') {
-                    const user1 = new userDir({
-                        postfor: data[1],
-                        name: data[2],
-                        email: data[3],
-                        phone: data[4],
-                        gender: data[5],
-                        fbLink: data[10],
-                        instaLink: data[11],
-                        linkedinLink: data[12],
-                        region: data[9],
-                        institute: data[6],
-                        field: data[7],
-                        year: data[8],
-                        experience: data[13],
-                        skills: skills
-                    });
-                    user1.save().then(() => console.log('inserted data into database'));
-                    redirects("/");
-                }
-                else {
-                    const user1 = new userAmb({
-                        postfor: data[1],
-                        name: data[2],
-                        email: data[3],
-                        phone: data[4],
-                        gender: data[5],
-                        fbLink: data[10],
-                        instaLink: data[11],
-                        linkedinLink: data[12],
-                        region: data[9],
-                        institute: data[6],
-                        field: data[7],
-                        year: data[8],
-                        experience: data[13],
-                        skills: skills
-                    });
-                    user1.save().then(() => console.log('inserted data into database'));
-                    redirects("/");
-                }
+
+                const user1 = new userVol1({
+                    name: data[1],
+                    email: data[2],
+                    phone: data[3],
+                    gender: data[4],
+                    fbLink: data[9],
+                    instaLink: data[10],
+                    linkedinLink: data[11],
+                    region: data[8],
+                    institute: data[5],
+                    field: data[6],
+                    year: data[7],
+                    experience: data[12],
+                    skills: skills
+                });
+                user1.save().then(() => console.log('inserted data into database'));
+                redirect('/')
             })
                 .catch((err) => {
                     console.log('Unable to connect to MongoDB Atlas');
@@ -109,20 +68,12 @@ export default function page() {
 
     }
 
-
-
     return (
         <div className={styles.body}>
             <div className={styles.container}>
                 <div className={styles.card}>
                     <form className={styles.cardform} action={addData} method='POST'>
-                        <div className={styles.dropdown}>
-                            <select name="postfor" className={styles.dropdownselect} id="postfor">
-                                <option value="director">Director</option>
-                                <option value="ambassador">Ambassador</option>
-                            </select>
-                            <label className={styles.dropdownlabel}>Apply for</label>
-                        </div>
+
                         <div className={styles.input}>
                             <input
                                 className={styles.inputfield}

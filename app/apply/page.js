@@ -24,7 +24,9 @@ export default function Home() {
                         <Image className={styles.rightSideImg} src={"/imgDir.jpeg"} width={480} height={263} alt='img' />
                         <div style={{}}>
                             <h3 style={{ marginBottom: '5px' }}>Apply for Digital Volunteer</h3>
+                            <a  href="/apply-for-volunteer" target='blank'>
                             <button className={styles.btntoo}>Click Here</button>
+                            </a>
                         </div>
                     </div>
                 </div>
