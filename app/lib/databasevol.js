@@ -1,5 +1,6 @@
 import React from 'react'
 import * as mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
 
 const schema = new mongoose.Schema({
@@ -31,7 +32,7 @@ export default async function mongodb(e) {
 
         let skills = data.slice(13, data.length);
         try {
-            const url = `mongodb+srv://test:kali@digitalpak.yl8cbcq.mongodb.net/digital?retryWrites=true&w=majority`;
+            const url = `mongodb+srv://test:${process.env.DB_PSWD}@digitalpak.yl8cbcq.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
             await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
             console.log('Connected to MongoDB Atlas')
             const user1 = new userVol1({
