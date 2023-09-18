@@ -1,16 +1,16 @@
-'use client'
+
 import React from 'react'
 import styles from './page.module.css'
 import addData1 from '../lib/mongodb'
-import { useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 
 
 export default function page() {
-    const router = useRouter();
 
     const addData = async (e) => {
+        "use server"
         await addData1(e);
-        router.push('/');
+        redirect("/")
         console.log('pushed');
     };
 
