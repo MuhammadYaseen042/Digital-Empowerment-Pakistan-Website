@@ -9,7 +9,7 @@ export default function Navbar() {
         <footer className={styles.footer}>
             <div className={styles.footerInner}>
                 <div style={{ width: '100%', marginBottom: '64px' }}>
-                    <img style={{ height: '5rem', objectFit: 'cover', width: '180px' }} src="/logo.png" alt="logo" />
+                    <img style={{ height: '5rem', objectFit: 'cover', width: '180px' }} src="/Logo.png" alt="logo" />
                 </div>
 
             </div>

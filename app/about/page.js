@@ -21,7 +21,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div className={styles.conContainerInnerImg}>
-                        <Image className={styles.rightSideImg} src={"/BLACK.png"} width={480} height={263} alt='img' />
+                        <Image className={styles.rightSideImg} src={"/bLACK.png"} width={480} height={263} alt='img' />
                     </div>
                 </div>
             </div>
