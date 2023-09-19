@@ -1,6 +1,5 @@
 import React from 'react'
 import * as mongoose from 'mongoose';
-import dotenv from 'dotenv';
 
 
 const schema = new mongoose.Schema({
