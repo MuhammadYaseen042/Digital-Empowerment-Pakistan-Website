@@ -15,7 +15,7 @@
 }
 
 .mainfront {
-    background-image: url('/Wallpaper.jpg');
+    background-image: url('/mainFront.jpeg');
     min-height: 100vh;
     min-width: 90vw;
     background-size: cover;
